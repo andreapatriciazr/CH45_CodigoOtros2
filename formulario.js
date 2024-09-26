@@ -2,14 +2,15 @@ var formulario = document.querySelector("#form")
 
 formulario.onsubmit = function(e) {
 
-  e.prevent();
+  e.preventDefault(); // prevent Default
   
   var n = formulario.elements[0]
   var e = formulario.elements[1]
   var na = formulario.elements[2]
 
-  var nombre = n.value
-  var edad = e.value
+  var nombre = n.value;
+  var edad = e.value;
+  var nacionalidad = na.value; // variable nacionalidad
 
   var i = na.selectedIndex
   var nacionalidad = na.options[i].value
@@ -55,7 +56,7 @@ function agregarInvitado(nombre, edad, nacionalidad) {
 var lista = document.getElementById("lista-de-invitados")
 
 var elementoLista = document.createElement("div")
-elementoLista.classList.added("elemento-lista")
+elementoLista.classList.add("elemento-lista") // add tiempo presente
 lista.appendChild(elementoLista)
 
 var spanNombre = document.createElement("span")
@@ -67,15 +68,9 @@ elementoLista.appendChild(spanNombre)
 elementoLista.appendChild(inputNombre)
 elementoLista.appendChild(espacio)
 
-function crearElemento(descripcion, valor) {
-var spanNombre = document.createElement("span")
-var inputNombre = document.createElement("input")
-var espacio = document.createElement("br")
-spanNombre.textContent = descripcion + ": "
-inputNombre.value = valor 
-elementoLista.appendChild(spanNombre)
-elementoLista.appendChild(inputNombre)
-elementoLista.appendChild(espacio)
+function crearElemento(descripcion, valor, elementoLista) {
+  var spanNombre = document.createElement("span");
+  var inputNombre = document.createElement("input");
 }
 
 crearElemento("Nombre", nombre)

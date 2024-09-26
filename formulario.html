@@ -13,10 +13,14 @@
   <h2>Por favor, confirmar asistencia:</h2>
 
   <form class="formulario">
-    Nombre <input type="text" name="name" id="name">
-    <br />
-    Edad <input type="number" name="age" id="age">
-    <br />
+    <!-- correccion formulario -->
+    <label for="name">Nombre</label>
+    <input type="text" name="name" id="name" placeholder="Ingresa tu nombre" required>
+    <br/>
+
+    <label for="age">Edad</label>
+    <input type="number" name="age" id="age" placeholder="Ingresa tu edad" min="0" required>
+    <br/>
 
     Nacionalidad
     <select name="nationality" id="nationality">
@@ -29,12 +33,13 @@
     <input type="submit">
   </form>
 
+<!-- identificador para la lista de invitados -->
   <div>
     <h2>Lista de invitados</h2>
-
+    <div id="lista-de-invitados"></div> 
   </div>
 
-  <script src="../formulario.js"></script>
+  <script src="./formulario.js"></script>
 </body>
 
 </html>
